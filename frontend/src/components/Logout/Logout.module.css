@@ -1,0 +1,23 @@
+.logoutRegisterSpan {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  width: 200px;
+  color: var(--Negrosuave);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &&:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.logoutIcons {
+  width: 35px;
+  height: 35px;
+  align-self: center;
+}

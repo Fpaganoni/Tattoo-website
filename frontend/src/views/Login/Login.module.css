@@ -1,0 +1,119 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  min-width: 100%;
+  height: 100vh;
+
+  --Blanco: #ffffff;
+  --Grisclaro: #ededed;
+  --Negrosuave: #2c2c2c;
+  --Azulpetróleo: #264653;
+  --Amarillomostaza: #e9c46a;
+  --Verdeoliva: #3e5c2f;
+  --Terracota: #91332d;
+  --Celestegris: #a8dadc;
+  --Rojoerror: #c0392b;
+}
+
+.generalContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* blanco casi transparente */
+  backdrop-filter: blur(10px);
+}
+
+.loginContainer {
+  position: fixed;
+  width: 400px;
+  height: max-content;
+  background-color: var(--Negrosuave);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 40px 45px;
+  border-radius: 2px;
+}
+
+.containerTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.buttonClose {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  background-color: var(--Terracota);
+  width: 40px;
+  align-self: flex-end;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 2.2rem;
+  align-self: center;
+}
+
+.labelsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.labelsLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.inputsLogin {
+  cursor: text;
+  padding: 8px 12px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.buttonLogin {
+  font-size: 1rem;
+  border: none;
+  padding: 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 70px;
+
+  &&:hover {
+    background-color: var(--Verdeoliva);
+  }
+}
+
+.buttonLogin:disabled:hover {
+  background-color: rgba(19, 1, 1, 0.3);
+  cursor: not-allowed;
+}
+
+.errorMsj {
+  color: var(--Rojoerror);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}

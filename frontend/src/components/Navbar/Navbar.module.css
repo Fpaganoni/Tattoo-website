@@ -1,0 +1,152 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  min-width: 100%;
+  height: 100vh;
+
+  --Blanco: #ffffff;
+  --Grisclaro: #ededed;
+  --Negrosuave: #2c2c2c;
+  --Azulpetróleo: #264653;
+  --Amarillomostaza: #e9c46a;
+
+  --intermediate-gray: #c0c0c0;
+
+  --gray-900: #121212;
+  --gray-800: #1e1e1e;
+  --gray-700: #2c2c2c;
+  --gray-600: #3a3a3a;
+  --gray-500: #4f4f4f;
+  --gray-400: #666666;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: var(--Amarillomostaza);
+  width: 100%;
+  align-items: center;
+  height: 95px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+}
+
+.mainTitle {
+  font-family: "montserrat", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--Negrosuave);
+  font-weight: 500;
+}
+
+.loginRegisterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+}
+
+.loginRegisterContainer span:first-child {
+  padding-right: 20px;
+}
+
+.loginRegisterContainer span:last-child {
+  padding-left: 20px;
+}
+
+.loginRegisterSpan {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  color: var(--Negrosuave);
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &&:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.logoutIcons {
+  width: 35px;
+  height: 35px;
+  align-self: center;
+}
+
+.loginRegisterIcons {
+  width: 30px;
+  height: 30px;
+  align-self: center;
+}
+
+/*  social icon container */
+
+.iconContainer {
+  width: 70%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--intermediate-gray);
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.socialIcons {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &&:hover {
+    transform: translateY(5px);
+  }
+}
+
+.anchor {
+  width: 35px;
+  height: 35px;
+}
+
+/*  navbar tabs */
+
+.navbarTabsContainer {
+  width: 325px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarTabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+}
+
+.navbarTab {
+  list-style: none;
+  color: var(--Negrosuave);
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+
+  &&:hover {
+    color: var(--Grisclaro);
+  }
+}

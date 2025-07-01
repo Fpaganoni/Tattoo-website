@@ -1,0 +1,66 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  min-width: 100%;
+  height: 100vh;
+
+  --Blanco: #ffffff;
+  --Grisclaro: #ededed;
+  --Negrosuave: #2c2c2c;
+  --Azulpetróleo: #264653;
+  --Amarillomostaza: #e9c46a;
+}
+
+.footerContainer {
+  background-color: var(--Amarillomostaza);
+  color: var(--Negrosuave);
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerContent {
+  padding: 40px 75px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.paymentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.paymentImgContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.contactTitle {
+  margin-bottom: 0.6rem;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-weight: 600;
+}
+
+.contactIcons {
+  width: 20px;
+}

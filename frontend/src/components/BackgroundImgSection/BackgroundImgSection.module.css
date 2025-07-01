@@ -1,0 +1,36 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  min-width: 100%;
+  height: 100vh;
+
+  --Blanco: #ffffff;
+  --Grisclaro: #ededed;
+  --Negrosuave: #2c2c2c;
+  --Azulpetróleo: #264653;
+  --Amarillomostaza: #e9c46a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 600px;
+  background-color: white;
+  position: relative;
+}
+
+.stickySection {
+  height: 600px;
+  background-image: url("../../assets/img/tattos-img1.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
