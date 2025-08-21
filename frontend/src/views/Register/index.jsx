@@ -7,6 +7,7 @@ import birdTatto from "../../assets/tattos-removeBG/tatto-bird.png";
 import inkTatto from "../../assets/tattos-removeBG/tatto-ink.png";
 import heartTatto from "../../assets/tattos-removeBG/tatto-heart.png";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Register = () => {
   const {
@@ -22,7 +23,7 @@ const Register = () => {
 
   const sendData = (data) => {
     axios
-      .post("http://localhost:3000/users/register", data)
+      .post(`${apiUrl}/users/register`, data)
       .then((res) => {
         alert("User registered successfully");
         console.log("User registered", res.data);

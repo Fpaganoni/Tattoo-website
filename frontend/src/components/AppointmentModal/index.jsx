@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import styles from "./AppointmentModal.module.css";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 // import { format } from "date-fns"; // Import format from date-fns for date formatting
 
 const AppointmentModal = ({ onAddAppointment }) => {
@@ -23,7 +24,7 @@ const AppointmentModal = ({ onAddAppointment }) => {
     };
 
     axios
-      .post("http://localhost:3000/appointments/schedule", appointmentData)
+      .post(`${apiUrl}/appointments/schedule`, appointmentData)
       .then((res) => {
         alert("Appointment scheduled successfully");
         console.log("Appointment scheduled:", res.data);
@@ -47,11 +48,11 @@ const AppointmentModal = ({ onAddAppointment }) => {
             className={styles.newAppInput}
             type="date"
             min={today}
-            placeholder="2025/09/05"
+            placeholder="2025-09-05"
             {...register("appointmentDate", {
               required: "This field is required",
               validate: (value) => {
-                const regex = /^\d{4}\/\d{2}\/\d{2}$/;
+                const regex = /^\d{4}-\d{2}-\d{2}$/;
                 return (
                   regex.test(value) || "Invalid date format. Use YYYY/MM/DD."
                 );

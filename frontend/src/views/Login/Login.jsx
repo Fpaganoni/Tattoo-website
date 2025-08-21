@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const Login = ({ handleOnClose, onLoginSucces }) => {
   const {
@@ -23,7 +24,7 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3000/users/login", data)
+      .post(`${apiUrl}/users/login`, data)
       .then((res) => {
         localStorage.setItem("user", JSON.stringify(res.data));
         alert("Login successful");

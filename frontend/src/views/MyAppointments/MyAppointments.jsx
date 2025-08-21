@@ -5,6 +5,7 @@ import AppointmentCard from "../../components/AppointmentCard/index";
 import styles from "./MyAppointments.module.css";
 import axios from "axios";
 import AppoinmentModal from "../../components/AppointmentModal/index";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const MyAppointments = () => {
   const [myAppointments, setMyAppointments] = useState([]);
@@ -29,7 +30,7 @@ const MyAppointments = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/appointments/${id}`)
+      .get(`${apiUrl}/appointments/${id}`)
       .then((res) => setMyAppointments(res.data))
       .catch((error) => {
         console.error("Error fetching appointments:", error);

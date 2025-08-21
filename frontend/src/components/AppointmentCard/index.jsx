@@ -1,5 +1,6 @@
 import styles from "./Appointments.module.css";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const AppointmentCard = ({ appointment, onCancelStatus }) => {
   const handleCancelAppointment = () => {
@@ -12,9 +13,7 @@ const AppointmentCard = ({ appointment, onCancelStatus }) => {
     if (confirmed) {
       console.log("Cancel appointment clicked", appointment.appointmentID);
       axios
-        .put(
-          `http://localhost:3000/appointments/cancel/${appointment.appointmentID}`
-        )
+        .put(`${apiUrl}/appointments/cancel/${appointment.appointmentID}`)
         .then(() => {
           onCancelStatus(appointment.appointmentID);
         });
