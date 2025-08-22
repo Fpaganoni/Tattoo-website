@@ -158,3 +158,91 @@ input {
   cursor: pointer;
   border: none;
 }
+
+@media (max-width: 1024px) {
+  /* GENERAL CONTAINER */
+
+  .container {
+    gap: 1rem;
+  }
+
+  .schedulesFigure {
+    position: relative;
+    left: -80px;
+    top: -30px;
+    width: 380px;
+  }
+
+  /* RESERVE APPOINTMENT CONTAINER */
+
+  .reserveContainer {
+    width: 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    top: 50px;
+    right: -50px;
+  }
+
+  /* SPONSOR BRANDS */
+
+  .sponsorContainer {
+    top: 0px;
+    left: 0px;
+  }
+
+  .brandsImgRadiant {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -370px;
+    left: -400px;
+  }
+
+  .brandsDynamicImg {
+    position: absolute;
+    top: -700px;
+    left: -400px;
+  }
+
+  .brandsEternalImg {
+    position: absolute;
+    top: -510px;
+    left: -400px;
+  }
+
+  .brandsDynamicImg,
+  .brandsEternalImg {
+    width: 200px;
+    height: 110px;
+  }
+
+  .cartContainer {
+    width: 250px;
+  }
+
+  .quantityLabel {
+    width: 250px;
+  }
+
+  .buttonCart {
+    width: 250px;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .sippingCost {
+    width: 100%;
+  }
+
+  .zipcodeInput {
+    width: 50%;
+  }
+
+  .zipCodeButton {
+    width: 40%;
+  }
+}

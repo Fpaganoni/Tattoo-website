@@ -64,3 +64,21 @@
 .contactIcons {
   width: 20px;
 }
+
+@media (max-width: 1024px) {
+  .footerContent {
+    padding: 30px 25px;
+  }
+
+  .paymentsContainer {
+    gap: 1.3rem;
+  }
+
+  .paymentImgContainer {
+    gap: 1.5rem;
+  }
+
+  .contactContainer {
+    gap: 0.8rem;
+  }
+}

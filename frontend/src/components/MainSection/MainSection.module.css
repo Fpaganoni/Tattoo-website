@@ -87,3 +87,26 @@
   cursor: pointer;
   font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .mainSection {
+    height: 1200px;
+  }
+
+  .subContainer {
+    position: relative;
+    top: 170px;
+    flex-direction: column;
+    gap: 130px;
+  }
+
+  .logo {
+    width: 350px;
+    height: 350px;
+    margin-left: 300px;
+  }
+
+  .experienceContainer {
+    width: 550px;
+  }
+}
