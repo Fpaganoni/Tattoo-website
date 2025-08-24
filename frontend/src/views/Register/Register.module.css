@@ -139,3 +139,78 @@
   backdrop-filter: blur(10px);
   font-size: 1.1rem;
 }
+
+@media (max-width: 1024px) {
+  .tattosEye {
+    bottom: 280px;
+    right: 50px;
+  }
+
+  .tattosSkull {
+    top: 50px;
+    left: 50px;
+  }
+
+  .tattosUsd {
+    bottom: 100px;
+    left: 70px;
+  }
+
+  .tattosbird {
+    top: 50px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tattosEye {
+    bottom: 325px;
+    right: -15px;
+    transform: rotate(-25deg);
+  }
+
+  .tattosSkull {
+    transform: rotate(-15deg);
+    top: -80px;
+    left: -20px;
+  }
+
+  .tattosUsd {
+    bottom: 150px;
+    transform: rotate(-10deg);
+    left: -40px;
+  }
+
+  .tattosbird {
+    top: -60px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .singupForm {
+    width: 90%;
+    margin: 35px auto;
+    padding: 20px 25px;
+  }
+
+  .tattosEye,
+  .tattosSkull,
+  .tattosUsd,
+  .tattosbird {
+    display: none;
+  }
+
+  .labelsForm {
+    font-size: 1.1rem;
+    gap: 0.2rem;
+    font-weight: 500;
+  }
+
+  .formInputs {
+    border: none;
+    padding: 5px 12px;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+}

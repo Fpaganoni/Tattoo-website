@@ -68,6 +68,7 @@
 @media (max-width: 1024px) {
   .footerContent {
     padding: 30px 25px;
+    gap: 2rem;
   }
 
   .paymentsContainer {
@@ -80,5 +81,15 @@
 
   .contactContainer {
     gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .contactContainer {
+    align-items: center;
   }
 }

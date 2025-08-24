@@ -25,9 +25,10 @@
 
 @media (max-width: 1024px) {
   .logoutRegisterSpan {
-    font-size: 1rem;
+    font-size: 0.8rem;
     gap: 5px;
     flex: 1;
+    max-width: 200px;
   }
 
   .logoutIcons {

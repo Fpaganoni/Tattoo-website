@@ -7,15 +7,14 @@ import radiant from "../../assets/brands-sponsor-logos/radiant-logo.png";
 const GetAppointment = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.schedulesContainer}>
-        <figure className={styles.schedulesFigure}>
-          <img
-            className={styles.schedulesImage}
-            src={appointment}
-            alt="Days open and close"
-          />
-        </figure>
-      </div>
+      <figure className={styles.schedulesFigure}>
+        <img
+          className={styles.schedulesImage}
+          src={appointment}
+          alt="Days open and close"
+        />
+      </figure>
+
       <div className={styles.reserveContainer}>
         <div className={styles.sponsorContainer}>
           <img
@@ -65,6 +64,8 @@ const GetAppointment = () => {
               className={styles.zipcodeInput}
               type="number"
               min={0}
+              id="zipcode"
+              name="zipcode"
               placeholder="Zip Code"
             />
             <button className={styles.zipCodeButton} type="button">

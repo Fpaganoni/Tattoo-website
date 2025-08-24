@@ -163,3 +163,65 @@
   width: 600px;
   line-height: 1.5;
 }
+
+@media (max-width: 480px) {
+  .aboutContainer {
+    width: 100%;
+    padding: 100px 0;
+  }
+
+  /* ABOUT CONTENT */
+
+  .aboutContent,
+  .contactContainer {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  .aboutTitle,
+  .contactTitle {
+    font-size: 1.9rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    padding-bottom: 16px;
+  }
+
+  .paragraphContainers {
+    gap: 2.4rem;
+  }
+
+  .aboutParagraph {
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* CONTACT */
+
+  .contactInfo {
+    font-size: 1.1rem;
+  }
+
+  /* SING UP SECTION */
+
+  .singupContainer {
+    width: 300px;
+    line-height: 1.4;
+    margin: 50px 0;
+  }
+
+  .suscribeForm {
+    width: 100%;
+    gap: 0rem;
+  }
+
+  /* SOCIALS*/
+
+  .socialTitle {
+    letter-spacing: 5px;
+  }
+
+  .socialParagraph {
+    width: 85%;
+    line-height: 1.4;
+  }
+}

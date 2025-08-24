@@ -125,6 +125,7 @@ input {
   font-size: 1.1rem;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .sippingCost {
@@ -157,6 +158,15 @@ input {
   width: 30%;
   cursor: pointer;
   border: none;
+  border-radius: 4px;
+  border: 2px solid var(--Blanco);
+}
+
+@media (max-width: 1440px) {
+  .sponsorContainer {
+    top: -430px;
+    left: -480px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -244,5 +254,70 @@ input {
 
   .zipCodeButton {
     width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* GENERAL CONTAINER */
+
+  .container {
+    flex-direction: column;
+    gap: 120px;
+  }
+
+  .schedulesFigure {
+    position: relative;
+    left: 0px;
+    top: 50px;
+    width: 380px;
+  }
+
+  .schedulesImage {
+    width: 400px;
+    height: 450px;
+  }
+
+  /* RESERVE APPOINTMENT CONTAINER */
+
+  .reserveContainer {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    top: 0px;
+    right: 0px;
+  }
+
+  /* SPONSOR BRANDS */
+
+  .sponsorContainer {
+    display: none;
+  }
+
+  .cartContainer {
+    width: 100%;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .buttonCart {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    height: 30%;
+    align-self: flex-end;
+  }
+
+  .zipCodeButton {
+    width: 55%;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reserveContainer {
+    width: 80%;
   }
 }

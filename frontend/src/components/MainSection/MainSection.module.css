@@ -110,3 +110,23 @@
     width: 550px;
   }
 }
+
+@media (max-width: 768px) {
+  .logo {
+    width: 450px;
+    height: 450px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experienceContainer {
+    width: 90%;
+    text-align: center;
+  }
+
+  .logo {
+    width: 350px;
+    height: 350px;
+  }
+}

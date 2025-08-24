@@ -136,8 +136,8 @@
 .navbarTabs {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-
+  justify-content: center;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -219,17 +219,19 @@
 
 @media (max-width: 768px) {
   .navbar {
-    height: 85px;
+    height: 200px;
+    flex-direction: column;
   }
 
   .mainTitle {
-    font-size: 1.2rem;
-    flex: 1;
+    font-size: 1.4rem;
+    flex: 0;
   }
 
   .loginRegisterContainer {
     width: 200px;
     flex: 1;
+    gap: 45px;
   }
 
   .loginRegisterContainer span:first-child {
@@ -258,7 +260,7 @@
   /*  navbar tabs */
 
   .navbarTabsContainer {
-    width: 180px;
+    width: 300px;
     flex: 1;
   }
 
@@ -268,5 +270,11 @@
 
   .navbarTab {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .iconContainer {
+    width: 90%;
   }
 }
