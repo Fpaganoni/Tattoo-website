@@ -20,4 +20,11 @@ export const AppDataSource = new DataSource({
   entities: [User, Credential, Appointment],
   subscribers: [],
   migrations: [],
+  ssl: { rejectUnauthorized: false },
+  extra: {
+    connectionTimeoutMillis: 60000,
+    query_timeout: 60000,
+    statement_timeout: 60000,
+    host_preference: "IPv4",
+  },
 });
