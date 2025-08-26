@@ -80,3 +80,13 @@
   color: var(--Terracota);
   font-weight: 600;
 }
+
+@media (max-width: 480px) {
+  .appointmentModalContainer {
+    width: 360px;
+  }
+
+  .myAppointmentsTitle {
+    text-align: center;
+  }
+}

@@ -47,7 +47,7 @@ const Register = () => {
   return (
     <div className={styles.containerSingupForm}>
       <img
-        className={`${styles.tattos} ${styles.tattosEye}`}
+        className={`${styles.tattos} ${styles.tattosInk}`}
         src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tatto-ink.png?updatedAt=1755811307193"
         width={250}
         alt=""
@@ -56,7 +56,7 @@ const Register = () => {
         className={`${styles.tattos} ${styles.tattosbird}`}
         src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tatto-bird.png?updatedAt=1755811307343"
         width={250}
-        alt=""
+        alt="bird tattoo"
       />
       <img
         className={`${styles.tattos} ${styles.tattosHeart}`}

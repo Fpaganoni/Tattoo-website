@@ -40,17 +40,17 @@
   position: absolute;
 }
 
-.tattosEye {
+.tattosInk {
   bottom: 150px;
   right: 150px;
 }
 
-.tattosSkull {
+.tattosHeart {
   top: 150px;
   left: 150px;
 }
 
-.tattosUsd {
+.tattosSkull {
   bottom: 150px;
   left: 150px;
 }
@@ -141,19 +141,19 @@
 }
 
 @media (max-width: 1024px) {
-  .tattosEye {
+  .tattosInk {
     bottom: 280px;
     right: 50px;
   }
 
-  .tattosSkull {
+  .tattosHeart {
     top: 50px;
     left: 50px;
   }
 
-  .tattosUsd {
-    bottom: 100px;
-    left: 70px;
+  .tattosSkull {
+    bottom: 145px;
+    left: 60px;
   }
 
   .tattosbird {
@@ -163,42 +163,16 @@
 }
 
 @media (max-width: 768px) {
-  .tattosEye {
-    bottom: 325px;
-    right: -15px;
-    transform: rotate(-25deg);
-  }
-
-  .tattosHeart {
-    transform: rotate(-15deg);
-    top: -80px;
-    left: -20px;
-  }
-
-  .tattosSkull {
-    bottom: 150px;
-    transform: rotate(-10deg);
-    left: -40px;
-  }
-
-  .tattosbird {
-    top: -60px;
-    right: -10px;
+  .tattos {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .singupForm {
     width: 90%;
-    margin: 35px auto;
+    margin: 0px auto 50px;
     padding: 20px 25px;
-  }
-
-  .tattosEye,
-  .tattosSkull,
-  .tattosUsd,
-  .tattosbird {
-    display: none;
   }
 
   .labelsForm {
