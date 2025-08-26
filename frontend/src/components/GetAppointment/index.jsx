@@ -1,8 +1,4 @@
 import styles from "./GetAppointment.module.css";
-import appointment from "../../assets/img/appointment.png";
-import eternal from "../../assets/brands-sponsor-logos/esternalink-logo.jpg";
-import dynamic from "../../assets/brands-sponsor-logos/logo-dynamic.jpg";
-import radiant from "../../assets/brands-sponsor-logos/radiant-logo.png";
 
 const GetAppointment = () => {
   return (
@@ -10,7 +6,7 @@ const GetAppointment = () => {
       <figure className={styles.schedulesFigure}>
         <img
           className={styles.schedulesImage}
-          src={appointment}
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/appointment.png?updatedAt=1755811236950"
           alt="Days open and close"
         />
       </figure>
@@ -19,17 +15,17 @@ const GetAppointment = () => {
         <div className={styles.sponsorContainer}>
           <img
             className={styles.brandsEternalImg}
-            src={eternal}
+            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/esternalink-logo.jpg?updatedAt=1755811184228"
             alt="eternal logo"
           />
           <img
             className={styles.brandsImgRadiant}
-            src={radiant}
+            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/radiant-logo.png?updatedAt=1755811184160"
             alt="radiant logo"
           />
           <img
             className={styles.brandsDynamicImg}
-            src={dynamic}
+            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/logo-dynamic.jpg?updatedAt=1755811184207"
             alt="dynamic logo"
           />
         </div>

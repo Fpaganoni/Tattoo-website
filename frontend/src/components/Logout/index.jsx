@@ -1,5 +1,4 @@
 import styles from "./Logout.module.css";
-import logOut from "../../assets/social-icons/logOut.png";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +16,11 @@ const Logout = () => {
 
   return (
     <span className={styles.logoutRegisterSpan} onClick={handleLogout}>
-      <img className={styles.logoutIcons} src={logOut} alt="log out" />
+      <img
+        className={styles.logoutIcons}
+        src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/logOut.png?updatedAt=1755811286557"
+        alt="log out icon"
+      />
       Log Out
     </span>
   );

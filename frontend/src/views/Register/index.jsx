@@ -2,10 +2,6 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
-import usdTatto from "../../assets/tattos-removeBG/tatto-usd.png";
-import birdTatto from "../../assets/tattos-removeBG/tatto-bird.png";
-import inkTatto from "../../assets/tattos-removeBG/tatto-ink.png";
-import heartTatto from "../../assets/tattos-removeBG/tatto-heart.png";
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -52,27 +48,27 @@ const Register = () => {
     <div className={styles.containerSingupForm}>
       <img
         className={`${styles.tattos} ${styles.tattosEye}`}
-        src={inkTatto}
+        src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tatto-ink.png?updatedAt=1755811307193"
         width={250}
         alt=""
       />
       <img
         className={`${styles.tattos} ${styles.tattosbird}`}
-        src={birdTatto}
+        src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tatto-bird.png?updatedAt=1755811307343"
         width={250}
         alt=""
+      />
+      <img
+        className={`${styles.tattos} ${styles.tattosHeart}`}
+        src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tatto-heart.png?updatedAt=1755811307216"
+        width={250}
+        alt="Heart tattoo"
       />
       <img
         className={`${styles.tattos} ${styles.tattosSkull}`}
-        src={heartTatto}
+        src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tatto-skull.png?updatedAt=1755811307725"
         width={250}
-        alt=""
-      />
-      <img
-        className={`${styles.tattos} ${styles.tattosUsd}`}
-        src={usdTatto}
-        width={250}
-        alt=""
+        alt="skull tattoo"
       />
       <form className={styles.singupForm} onSubmit={handleSubmit(onSubmit)}>
         <label className={styles.labelsForm}>

@@ -1,4 +1,3 @@
-import logoTatt from "../../../assets/img/logoTatt.jpg";
 import styles from "../MainSection.module.css";
 
 const LogoComponent = () => {
@@ -6,7 +5,7 @@ const LogoComponent = () => {
     <figure className={styles.logo}>
       <img
         className={styles.imgLogo}
-        src={logoTatt}
+        src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/logoTatt.jpg?updatedAt=1755811243884"
         alt="Tattoo Studio business logo"
       />
     </figure>

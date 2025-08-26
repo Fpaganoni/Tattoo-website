@@ -169,13 +169,13 @@
     transform: rotate(-25deg);
   }
 
-  .tattosSkull {
+  .tattosHeart {
     transform: rotate(-15deg);
     top: -80px;
     left: -20px;
   }
 
-  .tattosUsd {
+  .tattosSkull {
     bottom: 150px;
     transform: rotate(-10deg);
     left: -40px;

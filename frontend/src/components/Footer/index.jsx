@@ -1,12 +1,4 @@
 import styles from "./Footer.module.css";
-import googlePay from "../../assets/payment-method-logos/googlepay-logo.png";
-import maestro from "../../assets/payment-method-logos/maestro-logo.png";
-import mastercard from "../../assets/payment-method-logos/mastercard-logo.png";
-import visa from "../../assets/payment-method-logos/visa-logo.png";
-import westernUnion from "../../assets/payment-method-logos/westernUnion-logo.png";
-import location from "../../assets/contact-icons/location-icon.png";
-import phone from "../../assets/contact-icons/telephone-icon.png";
-import email from "../../assets/contact-icons/mail-icon.png";
 
 const Footer = () => {
   return (
@@ -15,29 +7,62 @@ const Footer = () => {
         <div className={styles.paymentsContainer}>
           <h2 className={styles.paymentTitle}>PAYMENT METHODS</h2>
           <div className={styles.paymentImgContainer}>
-            <img width={50} height={43} src={googlePay} alt="" />
-            <img width={95} height={30} src={maestro} alt="" />
-            <img width={55} height={40} src={mastercard} alt="" />
-            <img width={40} height={45} src={visa} alt="" />
-            <img width={45} height={45} src={westernUnion} alt="" />
+            <img
+              width={50}
+              height={43}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/googlepay-logo.png?updatedAt=1755811264469"
+              alt="Google Pay Logo"
+            />
+            <img
+              width={95}
+              height={30}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/maestro-logo.png?updatedAt=1755811264493"
+              alt="Maestro Logo"
+            />
+            <img
+              width={55}
+              height={40}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/mastercard-logo.png?updatedAt=1755811264505"
+              alt="Mastercard Logo"
+            />
+            <img
+              width={40}
+              height={45}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/visa-logo.png?updatedAt=1755811264532"
+              alt="Visa Logo"
+            />
+            <img
+              width={45}
+              height={45}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/westernUnion-logo.png?updatedAt=1755811264516"
+              alt="Western Union Logo"
+            />
           </div>
         </div>
 
         <div className={styles.contactContainer}>
           <h2 className={styles.contactTitle}>CONTACT</h2>
           <span className={styles.contactInfo}>
-            <img className={styles.contactIcons} src={email} alt="email" />{" "}
+            <img
+              className={styles.contactIcons}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsMail.png?updatedAt=1755811286254"
+              alt="email icon"
+            />{" "}
             tattoStudio@gmail.com
           </span>
           <span className={styles.contactInfo}>
-            <img className={styles.contactIcons} src={phone} alt="phone" />{" "}
+            <img
+              className={styles.contactIcons}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/telephone-icon.png?updatedAt=1755811202520"
+              alt="phone icon"
+            />{" "}
             01169423436
           </span>
           <span className={styles.contactInfo}>
             <img
               className={styles.contactIcons}
-              src={location}
-              alt="location"
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsLocation.png?updatedAt=1755811286257"
+              alt="location icon"
             />
             6200 Independence Ave, Kansas City, MO 64125, Estados Unidos
           </span>

@@ -1,36 +1,54 @@
-import styles from "../navbar.module.css";
-import iconsFacebook from "../../../assets/social-icons/iconsFacebook.png";
-import iconsInstagram from "../../../assets/social-icons/iconsInstagram.png";
-import iconsTwitter from "../../../assets/social-icons/iconsTwitter.png";
-import iconsLinkedin from "../../../assets/social-icons/iconsLinkedin.png";
-import iconsTiktok from "../../../assets/social-icons/iconsTiktok.png";
-import iconsYoutube from "../../../assets/social-icons/iconsYoutube.png";
+import styles from "../Navbar.module.css";
 
 const SocialIcons = () => {
   return (
     <div className={styles.iconContainer}>
       <a className={styles.anchor} href="#">
-        <img src={iconsFacebook} className={styles.socialIcons} alt="" />
+        <img
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsFacebook.png?updatedAt=1755811286595"
+          className={styles.socialIcons}
+          alt="Facebook Logo"
+        />
       </a>
 
       <a className={styles.anchor} href="#">
-        <img src={iconsInstagram} className={styles.socialIcons} alt="" />
+        <img
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsInstagram.png?updatedAt=1755811288189"
+          className={styles.socialIcons}
+          alt="Instagram Logo"
+        />
       </a>
 
       <a className={styles.anchor} href="#">
-        <img src={iconsTwitter} className={styles.socialIcons} alt="" />
+        <img
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsTwitter.png?updatedAt=1755811286243"
+          className={styles.socialIcons}
+          alt="X Logo"
+        />
       </a>
 
       <a className={styles.anchor} href="#">
-        <img src={iconsTiktok} className={styles.socialIcons} alt="" />
+        <img
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsTiktok.png?updatedAt=1755811286221"
+          className={styles.socialIcons}
+          alt="TikTok Logo"
+        />
       </a>
 
       <a className={styles.anchor} href="#">
-        <img src={iconsLinkedin} className={styles.socialIcons} alt="" />
+        <img
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsLinkedin.png?updatedAt=1755811288189"
+          className={styles.socialIcons}
+          alt="LinkedIn Logo"
+        />
       </a>
 
       <a className={styles.anchor} href="#">
-        <img src={iconsYoutube} className={styles.socialIcons} alt="" />
+        <img
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/iconsYoutube.png?updatedAt=1755811286539"
+          className={styles.socialIcons}
+          alt="YouTube Logo"
+        />
       </a>
     </div>
   );

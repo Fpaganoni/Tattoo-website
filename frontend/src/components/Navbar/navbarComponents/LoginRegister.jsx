@@ -1,6 +1,4 @@
-import styles from "../navbar.module.css";
-import login from "../../../assets/social-icons/login.png";
-import register from "../../../assets/social-icons/register.png";
+import styles from "../Navbar.module.css";
 import { useContext, useState } from "react";
 import Login from "../../../views/Login/Login";
 
@@ -30,7 +28,7 @@ const LoginRegister = () => {
       <Link to="register" className={styles.loginRegisterSpan}>
         <img
           className={styles.loginRegisterIcons}
-          src={register}
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/register.png?updatedAt=1755811286545"
           alt="register logo"
         />
         Register
@@ -39,7 +37,7 @@ const LoginRegister = () => {
       <span onClick={handleLoginClick} className={styles.loginRegisterSpan}>
         <img
           className={styles.loginRegisterIcons}
-          src={login}
+          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/login.PNG?updatedAt=1755811286515"
           alt="login logo"
         />
         Login
