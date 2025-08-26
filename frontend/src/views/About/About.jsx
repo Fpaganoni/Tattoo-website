@@ -1,4 +1,4 @@
-import styles from "./About.module.css";
+import styles from "./about.module.css";
 import SocialIcons from "../../components/Navbar/navbarComponents/SocialIcons";
 
 const About = () => {
