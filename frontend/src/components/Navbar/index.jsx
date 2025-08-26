@@ -1,4 +1,4 @@
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 import LoginRegister from "./navbarComponents/LoginRegister";
 import NavbarTabs from "./navbarComponents/NavbarTabs";
 import { useContext } from "react";
