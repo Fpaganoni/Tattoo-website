@@ -24,9 +24,9 @@ const Register = () => {
   const sendData = (data) => {
     axios
       .post(`${apiUrl}/users/register`, data)
-      .then((res) => {
+      .then(() => {
         alert("User registered successfully");
-        console.log("User registered", res.data);
+
         navigate("/home");
         reset();
       })
@@ -34,7 +34,7 @@ const Register = () => {
         const backMsj = error.response?.data?.error || "Unknown error";
         alert(backMsj);
 
-        console.error("Error registering user", error.message);
+        throw new Error(backMsj);
       });
   };
 
@@ -42,7 +42,6 @@ const Register = () => {
 
   const onSubmit = (data) => {
     sendData(data);
-    console.log(data);
   };
 
   const handleClearClick = () => {

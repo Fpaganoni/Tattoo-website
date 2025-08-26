@@ -33,7 +33,7 @@ const MyAppointments = () => {
       .get(`${apiUrl}/appointments/${id}`)
       .then((res) => setMyAppointments(res.data))
       .catch((error) => {
-        console.error("Error fetching appointments:", error);
+        throw new Error("Error fetching appointments", error);
       });
   }, [id]);
 

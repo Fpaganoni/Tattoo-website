@@ -27,11 +27,10 @@ const AppointmentModal = ({ onAddAppointment }) => {
       .post(`${apiUrl}/appointments/schedule`, appointmentData)
       .then((res) => {
         alert("Appointment scheduled successfully");
-        console.log("Appointment scheduled:", res.data);
+
         onAddAppointment(res.data);
         reset();
       });
-    console.log("Appointmentsubmitted:", appointmentData);
   };
 
   return (

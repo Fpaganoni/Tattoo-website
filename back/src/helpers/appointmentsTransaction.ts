@@ -41,7 +41,7 @@ export const getAppointmentsTransaction = async (
     return newAppointment;
   } catch (error) {
     await queryRunner.rollbackTransaction();
-    console.error("Transaction failed:", error);
+
     throw error; // Lanza el error para manejarlo fuera de la transacción
   } finally {
     await queryRunner.release();

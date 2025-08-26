@@ -12,5 +12,5 @@ AppDataSource.initialize()
     });
   })
   .catch((error) => {
-    console.error("Error during Data Source initialization", error);
+    throw new Error("Error during Data Source initialization");
   });

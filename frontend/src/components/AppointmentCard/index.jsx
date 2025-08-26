@@ -11,7 +11,6 @@ const AppointmentCard = ({ appointment, onCancelStatus }) => {
     confirmed;
 
     if (confirmed) {
-      console.log("Cancel appointment clicked", appointment.appointmentID);
       axios
         .put(`${apiUrl}/appointments/cancel/${appointment.appointmentID}`)
         .then(() => {

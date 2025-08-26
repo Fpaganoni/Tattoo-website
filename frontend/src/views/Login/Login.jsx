@@ -32,7 +32,7 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
           login: true,
           ...res.data,
         });
-        console.log("User logged in", res.data);
+
         if (onLoginSucces) {
           onLoginSucces();
           navigate("/home");
@@ -41,8 +41,7 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
         reset();
       })
       .catch((error) => {
-        alert("Login failed");
-        console.error("Error logging in user", error);
+        alert("Login failed", error.response?.message || error.message);
       });
   };
 
