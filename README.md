@@ -3,9 +3,9 @@
 
 💻 I worked on the Tattoo Booking System, a full-stack application that allows users to book and manage tattoo appointments. The deployed project is available at:
 
-Frontend (Vercel)
+Frontend (Vercel): https://tattoo-website-six.vercel.app/
 
-Backend (Render/Neon)
+Backend (Render/Neon): https://tattoo-website-3488.onrender.com
 
 🌱 I learned here React.js, React Router DOM, React Hook Form, Axios, Node.js, Express.js, TypeORM, TypeScript, and PostgreSQL.
 
