@@ -320,4 +320,12 @@ input {
   .reserveContainer {
     width: 80%;
   }
+
+  .buttonCart {
+    padding: 4px;
+  }
+
+  .schedulesFigure {
+    width: 85%;
+  }
 }

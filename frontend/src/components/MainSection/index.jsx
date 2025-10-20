@@ -6,8 +6,8 @@ const MainSection = () => {
   return (
     <div className={styles.mainSection}>
       <div className={styles.subContainer}>
-        <ExperienceComponent />
         <LogoComponent />
+        <ExperienceComponent />
       </div>
     </div>
   );
