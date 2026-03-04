@@ -1,92 +1,96 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-  --Verdeoliva: #3e5c2f;
-  --Terracota: #91332d;
-  --Celestegris: #a8dadc;
-}
+/* AppointmentModal.module.css */
 
 .generalContainer {
   width: 100%;
-  height: 550px;
-  display: grid;
-  place-items: center;
-  font-family: "Montserrat", sans-serif;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .appointmentModalContainer {
-  width: 450px;
-  height: max-content;
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--carbon);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  background-color: var(--Grisclaro);
-  color: var(--Negrosuave);
-  padding: 40px;
-  border-radius: 10px;
-  gap: 3rem;
-  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-modal);
+}
+
+.appointmentModalTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--bone);
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .newAppLabel {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  align-self: baseline;
-  width: 100%;
-  cursor: pointer;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
+  color: var(--bone-muted);
+  width: 100%;
 }
 
 .newAppInput {
+  background-color: var(--steel);
+  border: 1px solid var(--steel-light);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1rem;
+  font-size: var(--fs-base);
+  color: var(--bone);
+  width: 90%;
   cursor: text;
-  background-color: var(--Negrosuave);
-  color: var(--Blanco);
-  padding: 10px 12px;
-  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.newAppInput:focus {
+  border-color: var(--gold);
+  outline: none;
 }
 
 .newAppButton {
-  padding: 5px 10px;
-  background-color: var(--Azulpetróleo);
-  border-radius: 2px;
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--gold);
+  color: var(--ink-black);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border: none;
-  font-weight: 600;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: var(--transition);
+}
 
-  &:hover {
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8), 3px 3px 7px rgba(0, 0, 0, 0.7);
-  }
+.newAppButton:hover:not(:disabled) {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
 }
 
 .newAppButton:disabled {
-  box-shadow: none;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .errorMsj {
-  color: var(--Terracota);
-  font-weight: 600;
+  color: var(--status-cancelled-text);
+  font-size: var(--fs-xs);
+  font-weight: 500;
 }
 
 @media (max-width: 480px) {
   .appointmentModalContainer {
-    width: 360px;
-  }
-
-  .myAppointmentsTitle {
-    text-align: center;
+    padding: 1.75rem 1.25rem;
   }
 }

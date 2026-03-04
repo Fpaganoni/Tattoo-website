@@ -1,119 +1,168 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-  --Verdeoliva: #3e5c2f;
-  --Terracota: #91332d;
-  --Celestegris: #a8dadc;
-  --Rojoerror: #c0392b;
-}
+/* Login.module.css */
 
 .generalContainer {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  top: 0px;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  background-color: rgba(255, 255, 255, 0.1); /* blanco casi transparente */
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease;
 }
 
 .loginContainer {
-  position: fixed;
-  width: 400px;
-  height: max-content;
-  background-color: var(--Negrosuave);
+  position: relative;
+  width: 440px;
+  background-color: var(--carbon);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
-  padding: 40px 45px;
-  border-radius: 2px;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-modal);
+  animation: fadeInUp 0.3s ease;
 }
 
 .containerTitle {
-  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
   position: relative;
 }
 
+/* Close button — SVG X icon */
 .buttonClose {
   position: absolute;
-  right: -5px;
-  top: -5px;
-  background-color: var(--Terracota);
-  width: 40px;
-  align-self: flex-end;
-  padding: 3px 5px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--steel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--ash);
+  font-size: 1rem;
+  line-height: 1;
   cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonClose:hover {
+  background: var(--red-ink);
+  border-color: var(--red-ink-light);
+  color: white;
 }
 
 .title {
-  font-size: 2.2rem;
-  align-self: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  color: var(--bone);
+  letter-spacing: 0.02em;
 }
 
 .labelsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.25rem;
 }
 
 .labelsLogin {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1.4rem;
+  gap: 0.45rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--bone-muted);
+}
+
+.passwordToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.passwordToggle:hover {
+  color: var(--gold);
+}
+
+.eyeIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  color: currentColor;
 }
 
 .inputsLogin {
+  background-color: var(--steel);
+  border: 1px solid var(--steel-light);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1rem;
+  font-size: var(--fs-base);
+  color: var(--bone);
+  width: 90%;
   cursor: text;
-  padding: 8px 12px;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.inputsLogin:focus {
+  border-color: var(--gold);
+  outline: none;
 }
 
 .buttonsContainer {
   display: flex;
-  justify-content: end;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .buttonLogin {
-  font-size: 1rem;
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--gold);
+  color: var(--ink-black);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border: none;
-  padding: 8px;
-  border-radius: 2px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  width: 70px;
-
-  &&:hover {
-    background-color: var(--Verdeoliva);
-  }
+  transition: var(--transition);
 }
 
-.buttonLogin:disabled:hover {
-  background-color: rgba(19, 1, 1, 0.3);
+.buttonLogin:hover:not(:disabled) {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.buttonLogin:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .errorMsj {
-  color: var(--Rojoerror);
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
+  color: var(--status-cancelled-text);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 480px) {
+  .loginContainer {
+    width: 90vw;
+    padding: 1.75rem 1.25rem;
+  }
 }

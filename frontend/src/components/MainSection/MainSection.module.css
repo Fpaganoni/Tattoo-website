@@ -1,19 +1,4 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-}
+/* MainSection.module.css */
 
 * {
   margin: 0;
@@ -21,112 +6,170 @@
   box-sizing: border-box;
 }
 
-/* MAIN SECTION */
-
 .mainSection {
-  position: relative;
-  height: 1100px;
-  background-color: var(--Negrosuave);
+  background-color: var(--carbon);
+  padding: 7rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .subContainer {
-  position: relative;
-  top: 190px;
-  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 110px;
+  gap: 5rem;
 }
 
-/* LOGO COMPONENT  */
+/* LOGO */
 .logo {
-  width: 400px;
-  height: 400px;
+  flex-shrink: 0;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold-border);
+  box-shadow: var(--shadow-gold), var(--shadow-card);
+  transition: var(--transition-slow);
+}
+
+.logo:hover {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 40px rgba(201, 168, 76, 0.3),
+    var(--shadow-card);
 }
 
 .imgLogo {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* EXPERIENCE COMPONENT */
-
+/* EXPERIENCE */
 .experienceContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: 530px;
-  font-size: 1.3rem;
+  gap: 1.25rem;
+  max-width: 520px;
+  animation: fadeInUp 0.7s ease both;
+  animation-delay: 0.15s;
 }
 
 .experienceSpan {
+  font-size: var(--fs-sm);
   font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 .experienceTitle {
-  letter-spacing: 5px;
-  color: var(--Blanco);
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--bone);
+  line-height: 1.2;
 }
 
 .experienceParagraph {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  word-spacing: 5px;
+  font-size: var(--fs-base);
+  color: var(--bone-muted);
   line-height: 1.8;
 }
 
-.experienceButton {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: var(--Amarillomostaza);
-  color: var(--Azulpetróleo);
-  cursor: pointer;
-  font-weight: 600;
+/* STATS ROW */
+.statsRow {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
 }
 
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: var(--fs-xs);
+  color: var(--ash);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* CTA BUTTON */
+.experienceButton {
+  align-self: flex-start;
+  padding: 0.8rem 2rem;
+  background-color: var(--gold);
+  color: var(--ink-black);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+
+.experienceButton:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .mainSection {
-    height: 1200px;
-  }
-
   .subContainer {
-    position: relative;
-    top: 170px;
-    flex-direction: column;
-    gap: 130px;
+    gap: 3rem;
   }
-
   .logo {
-    width: 350px;
-    height: 350px;
-    margin-left: 300px;
-  }
-
-  .experienceContainer {
-    width: 550px;
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media (max-width: 768px) {
+  .subContainer {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+  .experienceContainer {
+    align-items: center;
+  }
+  .experienceButton {
+    align-self: center;
+  }
+  .statsRow {
+    justify-content: center;
+  }
   .logo {
-    width: 450px;
-    height: 450px;
-    margin-left: 0px;
+    width: 280px;
+    height: 280px;
   }
 }
 
 @media (max-width: 480px) {
-  .experienceContainer {
-    width: 90%;
-    text-align: center;
+  .mainSection {
+    padding: 5rem 1.5rem;
   }
-
+  .experienceTitle {
+    font-size: var(--fs-2xl);
+  }
   .logo {
-    width: 350px;
-    height: 350px;
+    width: 230px;
+    height: 230px;
   }
 }

@@ -3,83 +3,87 @@ import SocialIcons from "../../components/Navbar/navbarComponents/SocialIcons";
 
 const About = () => {
   return (
-    <section className={styles.aboutContainer}>
-      <div className={styles.aboutContent}>
-        <h1 className={styles.aboutTitle}>About</h1>
-        <div className={styles.paragraphContainers}>
-          <p className={styles.aboutParagraph}>
-            Our mission is to help you find the right artist for your next
-            tattoo.
-          </p>
-          <p className={styles.aboutParagraph}>
-            We believe that getting a tattoo should be safe and easy. That’s why
-            we strive to make the process of finding a quality artist, making an
-            appointment and getting a tattoo a great experience, no matter if
-            it’s your first tattoo – or fifty first.
-          </p>
-          <p className={styles.aboutParagraph}>
-            Tattooing is about life, expression and identity. It’s about
-            discovering and defining who you are and making it a permanent part
-            of yourself. And Tattoodo is here to help you on every step of your
-            journey.
-          </p>
-          <p className={styles.aboutParagraph}>
-            Co-founded in 2013 by renowned tattoo artist and media personality
-            Ami James and backed by some of the most respected names in the
-            industry, Tattoodo is the world’s largest tattoo marketplace and
-            most downloaded tattoo app.
-          </p>
-        </div>
-      </div>
-      <div className={styles.contactContainer}>
-        <h2 className={styles.contactTitle}>Contact Us</h2>
-        <div className={styles.contactInfoContainer}>
-          <span className={styles.contactTitles}>Email</span>
-          <span className={styles.contactInfo}>tattoStudio@gmail.com</span>
-        </div>
-        <div className={styles.contactInfoContainer}>
-          <span className={styles.contactTitles}>Address</span>
-          <span className={styles.contactInfo}>
-            6200 Independence Ave, Kansas City, Estados Unidos
-          </span>
-        </div>
-      </div>
-      <div className={styles.singupContainer}>
-        <h2 className={styles.contactTitle}>Sign up for Our Newsletter</h2>
-        <div className={styles.suscribeForm}>
-          <label className={styles.subscribeLabel}>
-            <input
-              className={styles.subscribeInput}
-              type="email"
-              placeholder="Email"
-            />
-          </label>
-          <button className={styles.subscribeButton}>SUBSCRIBE</button>
-        </div>
-        <p className={styles.subscribeParagraph}>
-          You can unsubscribe at any time by clicking the link in the footer of
-          our emails. For information about our privacy practices, please visit
-          our website.
-        </p>
-        <p className={styles.subscribeParagraph}>
-          We use Mailchimp as our marketing platform. By clicking above to
-          subscribe, you acknowledge that your information will be transferred
-          to Mailchimp for processing. Learn more about Mailchimp’s privacy
-          practices here.
+    <div className={styles.aboutContainer}>
+      {/* Hero header */}
+      <div className={styles.aboutHero}>
+        <h1 className={styles.aboutTitle}>
+          About <span>Our Studio</span>
+        </h1>
+        <p className={styles.aboutHeroText}>
+          We believe that getting a tattoo should be a safe, inspiring, and
+          memorable experience — whether it's your first or your fifty-first.
         </p>
       </div>
-      <div className={styles.socialIconsContainer}>
-        <h2 className={styles.socialTitle}>CONNECT WITH US</h2>
-        <p className={styles.socialParagraph}>
-          Want to see more of our work, meet our artists, or find out about
-          promotions and news? Follow us on our social media. We share designs,
-          fresh tattoos, creative processes, and everything that happens every
-          day in the studio. Join the community, leave a like, comment, or send
-          us a direct message. We're always active and love connecting with you!
-        </p>
-        <SocialIcons />
+
+      <div className={styles.contentSection}>
+        {/* About paragraphs */}
+        <div className={styles.aboutContent}>
+          <div className={styles.paragraphContainers}>
+            <p className={styles.aboutParagraph}>
+              Our mission is to help you find the right artist for your next
+              tattoo. We strive to make every step of the process — from
+              inspiration to booking to aftercare — a great experience.
+            </p>
+            <p className={styles.aboutParagraph}>
+              Tattooing is about life, expression and identity. It's about
+              discovering and defining who you are and making it a permanent
+              part of yourself. Our studio is a place where your story takes
+              center stage.
+            </p>
+            <p className={styles.aboutParagraph}>
+              Co-founded by passionate artists with decades of combined
+              experience, our studio has built a reputation for quality,
+              creativity, and care. Every design is custom — because no two
+              stories are the same.
+            </p>
+          </div>
+        </div>
+
+        {/* Contact card */}
+        <div className={styles.contactContainer}>
+          <h2 className={styles.contactTitle}>Contact Us</h2>
+          <div className={styles.contactInfoContainer}>
+            <span className={styles.contactTitles}>Email</span>
+            <span className={styles.contactInfo}>tattoStudio@gmail.com</span>
+          </div>
+          <div className={styles.contactInfoContainer}>
+            <span className={styles.contactTitles}>Address</span>
+            <span className={styles.contactInfo}>
+              6200 Independence Ave, Kansas City, MO 64125
+            </span>
+          </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className={styles.singupContainer}>
+          <h2 className={styles.newsletterTitle}>Stay in the Loop</h2>
+          <div className={styles.suscribeForm}>
+            <label className={styles.subscribeLabel}>
+              <input
+                className={styles.subscribeInput}
+                type="email"
+                placeholder="your@email.com"
+              />
+            </label>
+            <button className={styles.subscribeButton}>Subscribe</button>
+          </div>
+          <p className={styles.subscribeParagraph}>
+            You can unsubscribe at any time. We use Mailchimp as our marketing
+            platform — your data stays safe.
+          </p>
+        </div>
+
+        {/* Social icons */}
+        <div className={styles.socialIconsContainer}>
+          <h2 className={styles.socialTitle}>Connect With Us</h2>
+          <p className={styles.socialParagraph}>
+            Follow us for fresh tattoos, artist spotlights, promotions, and
+            behind-the-scenes content from the studio.
+          </p>
+          <SocialIcons />
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

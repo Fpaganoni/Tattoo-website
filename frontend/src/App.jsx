@@ -7,14 +7,16 @@ import Register from "./views/Register/index";
 import MyAppointments from "./views/MyAppointments/MyAppointments";
 import About from "./views/About/About";
 import React, { Suspense, lazy } from "react";
+import { Toaster } from "sonner";
 
-const LoadingComponent = lazy(() =>
-  import("./components/LoadingComponent/index")
+const LoadingComponent = lazy(
+  () => import("./components/LoadingComponent/index"),
 );
 
 function App() {
   return (
     <>
+      <Toaster position="top-center" richColors theme="dark" />
       <Navbar />
 
       <Suspense fallback={<LoadingComponent />}>

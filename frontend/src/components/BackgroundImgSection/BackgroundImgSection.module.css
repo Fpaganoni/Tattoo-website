@@ -1,36 +1,142 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* BackgroundImgSection.module.css — Full-viewport dark hero */
 
 .wrapper {
-  height: 600px;
-  background-color: white;
   position: relative;
+  width: 100%;
 }
 
-.stickySection {
-  height: 600px;
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
   background-image: url("https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/tattos-img1.jpg?updatedAt=1755811246786");
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(13, 13, 13, 0.65) 50%,
+    rgba(13, 13, 13, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 860px;
+  animation: fadeInUp 0.9s ease both;
+}
+
+.heroEyebrow {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  color: var(--bone);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.heroSubtitle {
+  font-size: var(--fs-md);
+  color: var(--bone-muted);
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroCta {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;
+  background-color: var(--gold);
+  color: var(--ink-black);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--gold);
+}
+
+.heroCta:hover {
+  background-color: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.heroCtaSecondary {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;
+  background-color: transparent;
+  color: var(--bone);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--border-mid);
+}
+
+.heroCtaSecondary:hover {
+  border-color: var(--gold-border);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  .heroSubtitle {
+    font-size: var(--fs-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 1.5rem 1rem;
+  }
+  .heroCta,
+  .heroCtaSecondary {
+    width: 100%;
+    text-align: center;
+  }
 }

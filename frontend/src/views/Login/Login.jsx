@@ -4,7 +4,41 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
+import { toast } from "sonner";
 const apiUrl = import.meta.env.VITE_API_URL;
+
+const EyeOpen = () => (
+  <svg
+    className={styles.eyeIcon}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+const EyeClosed = () => (
+  <svg
+    className={styles.eyeIcon}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+    <line x1="1" y1="1" x2="23" y2="23" />
+  </svg>
+);
 
 const Login = ({ handleOnClose, onLoginSucces }) => {
   const {
@@ -27,7 +61,7 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
       .post(`${apiUrl}/users/login`, data)
       .then((res) => {
         localStorage.setItem("user", JSON.stringify(res.data));
-        alert("Login successful");
+        toast.success("Login successful");
         setUser({
           login: true,
           ...res.data,
@@ -41,16 +75,21 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
         reset();
       })
       .catch((error) => {
-        alert("Login failed", error.response?.message || error.message);
+        toast.error(error.response?.data?.message || "Login failed");
       });
   };
 
-  return (
+  return createPortal(
     <div className={styles.generalContainer}>
       <form className={styles.loginContainer} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.containerTitle}>
-          <button className={styles.buttonClose} onClick={handleOnClose}>
-            X
+          <button
+            className={styles.buttonClose}
+            onClick={handleOnClose}
+            type="button"
+            aria-label="Close"
+          >
+            ✕
           </button>
           <h3 className={styles.title}>Login</h3>
         </div>
@@ -77,8 +116,8 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
           </label>
 
           <label className={styles.labelsLogin}>
-            <span onClick={togglePassword}>
-              Password {showPassword ? "👁️" : "🙈"}
+            <span onClick={togglePassword} className={styles.passwordToggle}>
+              Password {showPassword ? <EyeOpen /> : <EyeClosed />}
             </span>
 
             <input
@@ -108,7 +147,8 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
           </button>
         </div>
       </form>
-    </div>
+    </div>,
+    document.body,
   );
 };
 

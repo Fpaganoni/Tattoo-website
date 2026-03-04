@@ -2,75 +2,95 @@ import styles from "./GetAppointment.module.css";
 
 const GetAppointment = () => {
   return (
-    <div className={styles.container}>
-      <figure className={styles.schedulesFigure}>
-        <img
-          className={styles.schedulesImage}
-          src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/appointment.png?updatedAt=1755811236950"
-          alt="Days open and close"
-        />
-      </figure>
-
-      <div className={styles.reserveContainer}>
-        <div className={styles.sponsorContainer}>
-          <img
-            className={styles.brandsEternalImg}
-            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/esternalink-logo.jpg?updatedAt=1755811184228"
-            alt="eternal logo"
-          />
-          <img
-            className={styles.brandsImgRadiant}
-            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/radiant-logo.png?updatedAt=1755811184160"
-            alt="radiant logo"
-          />
-          <img
-            className={styles.brandsDynamicImg}
-            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/logo-dynamic.jpg?updatedAt=1755811184207"
-            alt="dynamic logo"
-          />
+    <section className={styles.section}>
+      {/* Brand strip */}
+      <div className={styles.brandsStrip}>
+        <span className={styles.brandsLabel}>Trusted ink brands</span>
+        <div className={styles.brandsRow}>
+          <div className={styles.brandLogoWrapper}>
+            <img
+              className={styles.brandLogo}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/esternalink-logo.jpg?updatedAt=1755811184228"
+              alt="Eternal Ink logo"
+            />
+          </div>
+          <div className={styles.brandLogoWrapper}>
+            <img
+              className={`${styles.brandLogo} ${styles.radiantLogo}`}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/radiant-logo.png?updatedAt=1755811184160"
+              alt="Radiant Colors logo"
+            />
+          </div>
+          <div className={styles.brandLogoWrapper}>
+            <img
+              className={styles.brandLogo}
+              src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/logo-dynamic.jpg?updatedAt=1755811184207"
+              alt="Dynamic Color logo"
+            />
+          </div>
         </div>
-        <h1 className={styles.titleReserve}>Reserve an appointment</h1>
-        <span className={styles.reservePrice}>$50,00</span>
-        <a href="#" className={styles.seePromotions}>
-          See promotions available...
-        </a>
-        <div className={styles.cartContainer}>
-          <label className={styles.quantityLabel}>
-            Quantity:
+      </div>
+
+      {/* Main content */}
+      <div className={styles.container}>
+        {/* Schedule image */}
+        <figure className={styles.scheduleCard}>
+          <img
+            className={styles.schedulesImage}
+            src="https://ik.imagekit.io/p2ho5d9bi/Tattoo-website/appointment.png?updatedAt=1755811236950"
+            alt="Studio hours and availability"
+          />
+        </figure>
+
+        {/* Reserve panel */}
+        <div className={styles.reservePanel}>
+          <p className={styles.reserveEyebrow}>Reserve your spot</p>
+          <h2 className={styles.reserveTitle}>Book an Appointment</h2>
+
+          <div className={styles.priceRow}>
+            <span className={styles.price}>$50</span>
+            <span className={styles.priceNote}>Deposit / session</span>
+          </div>
+
+          <a href="#" className={styles.promotionsLink}>
+            See current promotions →
+          </a>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="quantity">
+              Sessions
+            </label>
             <input
-              className={styles.quantityInput}
+              className={styles.input}
               type="number"
               id="quantity"
               defaultValue={1}
               min={1}
             />
-          </label>
-          <button type="button" className={styles.buttonCart}>
-            Add to cart
+          </div>
+
+          <button type="button" className={styles.ctaButton}>
+            Reserve Session
           </button>
-        </div>
 
-        <div className={styles.sippingCost}>
-          <span className={styles.shippingCostTitle}>
-            Calculate shipping cost
-          </span>
+          <div className={styles.divider} />
 
-          <div className={styles.zipCodeContainer}>
+          <p className={styles.shippingLabel}>Calculate travel cost</p>
+          <div className={styles.zipRow}>
             <input
-              className={styles.zipcodeInput}
-              type="number"
-              min={0}
+              className={styles.input}
+              type="text"
               id="zipcode"
               name="zipcode"
-              placeholder="Zip Code"
+              placeholder="Zip code"
             />
-            <button className={styles.zipCodeButton} type="button">
+            <button className={styles.zipButton} type="button">
               Calculate
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

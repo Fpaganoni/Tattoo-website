@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import styles from "./AppointmentModal.module.css";
 import axios from "axios";
+import { toast } from "sonner";
 const apiUrl = import.meta.env.VITE_API_URL;
 // import { format } from "date-fns"; // Import format from date-fns for date formatting
 
@@ -26,7 +27,7 @@ const AppointmentModal = ({ onAddAppointment }) => {
     axios
       .post(`${apiUrl}/appointments/schedule`, appointmentData)
       .then((res) => {
-        alert("Appointment scheduled successfully");
+        toast.success("Appointment scheduled successfully");
 
         onAddAppointment(res.data);
         reset();

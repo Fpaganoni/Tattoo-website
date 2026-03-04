@@ -1,227 +1,223 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-  --Verdeoliva: #3e5c2f;
-  --Terracota: #91332d;
-  --Celestegris: #a8dadc;
-
-  --gray-900: #121212;
-  --gray-800: #1e1e1e;
-  --gray-700: #2c2c2c;
-  --gray-600: #3a3a3a;
-  --gray-500: #4f4f4f;
-  --gray-400: #666666;
-}
+/* about.module.css */
 
 .aboutContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-  padding: 100px;
-  background-color: var(--Negrosuave);
-  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  background-color: var(--ink-black);
+  font-family: var(--font-body);
 }
 
-/* ABAOUT CONTENT */
-
-.aboutContent,
-.contactContainer {
-  width: 650px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.aboutTitle,
-.contactTitle {
-  font-size: 2.1rem;
-  font-weight: 600;
-  letter-spacing: 5px;
-  color: var(--Blanco);
+/* HERO */
+.aboutHero {
+  background-color: var(--carbon);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 6rem 2rem 5rem;
   text-align: center;
-  padding-bottom: 16px;
+}
+
+.aboutTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+  color: var(--bone);
+  margin-bottom: 1.25rem;
+}
+
+.aboutTitle span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.aboutHeroText {
+  font-size: var(--fs-md);
+  color: var(--bone-muted);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* CONTENT SECTIONS */
+.contentSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .paragraphContainers {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .aboutParagraph {
-  text-align: center;
-  line-height: 1.5;
+  font-size: var(--fs-base);
+  color: var(--bone-muted);
+  line-height: 1.85;
 }
 
-/* CONTACT */
-
+/* CONTACT CARD */
 .contactContainer {
-  margin: 50px 0 0 0;
+  background-color: var(--carbon);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--bone);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .contactInfoContainer {
   display: flex;
   flex-direction: column;
-}
-
-.contactTitle {
-  padding-bottom: 16px;
+  gap: 0.3rem;
 }
 
 .contactTitles {
-  color: var(--gray-500);
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ash);
 }
 
 .contactInfo {
-  font-size: 1.2rem;
+  font-size: var(--fs-base);
+  color: var(--bone-muted);
 }
 
-/* SING UP SECTION */
-
+/* NEWSLETTER */
 .singupContainer {
-  width: 600px;
-  margin: 100px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  background-color: var(--Negrosuave);
-  text-align: center;
-  line-height: 1.5;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.newsletterTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--bone);
 }
 
 .suscribeForm {
-  width: 70%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  border: 3px solid var(--Verdeoliva);
-  border-radius: 4px;
+  gap: 0;
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid var(--steel-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
 }
 
-.subscribeButton {
-  padding: 7px;
-  background-color: var(--Verdeoliva);
-  color: var(--Blanco);
-  border: none;
-  cursor: pointer;
+.suscribeForm:focus-within {
+  border-color: var(--gold);
 }
 
 .subscribeLabel {
-  width: 100%;
+  flex: 1;
   display: flex;
 }
 
 .subscribeInput {
-  cursor: text;
-  text-align: left;
-  padding-left: 1rem;
+  width: 100%;
+  background-color: var(--steel);
+  padding: 0.7rem 1rem;
+  font-size: var(--fs-sm);
+  color: var(--bone);
+  font-family: var(--font-body);
+  border: none;
+  outline: none;
+}
+
+.subscribeInput::placeholder {
+  color: var(--ash);
+}
+
+.subscribeButton {
+  padding: 0.7rem 1.25rem;
+  background-color: var(--gold);
+  color: var(--ink-black);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.subscribeButton:hover {
+  background-color: var(--gold-light);
 }
 
 .subscribeParagraph {
-  margin-top: 18px;
+  font-size: var(--fs-xs);
+  color: var(--ash);
+  line-height: 1.7;
+  max-width: 440px;
 }
 
-/* SOCIALS*/
-
+/* SOCIAL ICONS */
 .socialIconsContainer {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 50px;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .socialTitle {
-  letter-spacing: 5px;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--bone);
 }
 
 .socialParagraph {
-  width: 600px;
-  line-height: 1.5;
+  font-size: var(--fs-base);
+  color: var(--bone-muted);
+  line-height: 1.75;
+  max-width: 580px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .aboutTitle {
+    font-size: var(--fs-3xl);
+  }
+  .contentSection {
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+  .suscribeForm {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-  .aboutContainer {
-    width: 100%;
-    padding: 100px 0;
+  .aboutHero {
+    padding: 4rem 1.25rem 3.5rem;
   }
-
-  /* ABOUT CONTENT */
-
-  .aboutContent,
-  .contactContainer {
-    width: 350px;
-    margin: 0 auto;
-  }
-
-  .aboutTitle,
-  .contactTitle {
-    font-size: 1.9rem;
-    font-weight: 500;
-    letter-spacing: 4px;
-    padding-bottom: 16px;
-  }
-
-  .paragraphContainers {
-    gap: 2.4rem;
-  }
-
-  .aboutParagraph {
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  /* CONTACT */
-
-  .contactInfo {
-    font-size: 1.1rem;
-  }
-
-  /* SING UP SECTION */
-
-  .singupContainer {
-    width: 300px;
-    line-height: 1.4;
-    margin: 50px 0;
-  }
-
-  .suscribeForm {
-    width: 100%;
-    gap: 0rem;
-  }
-
-  /* SOCIALS*/
-
-  .socialTitle {
-    letter-spacing: 5px;
-  }
-
-  .socialParagraph {
-    width: 85%;
-    line-height: 1.4;
+  .aboutTitle {
+    font-size: var(--fs-2xl);
   }
 }

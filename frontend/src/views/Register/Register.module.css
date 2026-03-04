@@ -1,190 +1,217 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-  --Verdeoliva: #3e5c2f;
-  --Terracota: #91332d;
-  --Celestegris: #a8dadc;
-  --Rojoerror: #c0392b;
-
-  --intermediate-gray: #c0c0c0;
-
-  --gray-900: #121212;
-  --gray-800: #1e1e1e;
-  --gray-700: #2c2c2c;
-  --gray-600: #3a3a3a;
-  --gray-500: #4f4f4f;
-  --gray-400: #666666;
-}
+/* Register.module.css */
 
 .containerSingupForm {
-  width: 100%;
-  padding: 20px;
+  min-height: 100vh;
+  background-color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
   position: relative;
-  background: -webkit-linear-gradient(90deg, #264653, #ededed, #e9c46a);
-  /* Chrome 10-25, Safari 5.1-6 */
+  overflow: hidden;
 }
 
+/* Decorative tattoo PNGs — desktop only, low opacity */
 .tattos {
   position: absolute;
+  opacity: 0.06;
+  pointer-events: none;
+  filter: invert(1);
+  z-index: 0;
 }
 
 .tattosInk {
-  bottom: 150px;
-  right: 150px;
+  bottom: 80px;
+  right: 8%;
 }
 
 .tattosHeart {
-  top: 150px;
-  left: 150px;
+  top: 80px;
+  left: 8%;
 }
 
 .tattosSkull {
-  bottom: 150px;
-  left: 150px;
+  bottom: 80px;
+  left: 8%;
 }
 
 .tattosbird {
-  top: 150px;
-  right: 150px;
+  top: 80px;
+  right: 8%;
 }
 
-.imageContainer {
-  width: 400px;
-}
-
+/* FORM CARD */
 .singupForm {
-  width: 550px;
-  margin: 50px auto;
-  margin-bottom: 100px;
-  background-color: var(--intermediate-gray);
-  /* background: -webkit-linear-gradient(200deg, #264653, #ededed, #e9c46a); */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), -2px -2px 10px rgba(0, 0, 0, 0.2);
-  color: var(--Negrosuave);
-  font-family: "Montserrat", sans-serif;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  background-color: var(--carbon);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 50px 60px;
-  border-radius: 3px;
+  gap: 1.1rem;
+  box-shadow: var(--shadow-modal);
+  animation: fadeInUp 0.4s ease both;
 }
 
+/* Form title (added via JSX) */
+.formTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--bone);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.formSubtitle {
+  text-align: center;
+  color: var(--ash);
+  font-size: var(--fs-sm);
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* LABELS AND INPUTS */
 .labelsForm {
   display: flex;
   flex-direction: column;
-  font-size: 1.3rem;
-  gap: 0.5rem;
-  font-weight: 600;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--bone-muted);
+}
+
+.passwordToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.passwordToggle:hover {
+  color: var(--gold);
+}
+
+.eyeIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  color: currentColor;
 }
 
 .formInputs {
-  border: 1px solid var(--Amarillomostaza);
-  padding: 6px 16px;
-  letter-spacing: 1px;
+  background-color: var(--steel);
+  border: 1px solid var(--steel-light);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  font-size: var(--fs-base);
+  color: var(--bone);
+  width: 100%;
   cursor: text;
-  font-weight: 600;
-  border-radius: 3px;
-  background-color: var(--Negrosuave);
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.3rem;
-}
-
-.formInputs:not(:placeholder-shown) {
-  background-color: var(--Verdeoliva);
+  font-family: var(--font-body);
+  transition: var(--transition);
+  letter-spacing: 0.03em;
 }
 
 .formInputs::placeholder {
-  color: var(--Amarillomostaza);
+  color: var(--ash);
+  opacity: 0.6;
 }
 
+.formInputs:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.formInputs:not(:placeholder-shown) {
+  border-color: var(--border-mid);
+}
+
+/* 2-column grid for pairs of fields */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ERROR */
+.errorMsj {
+  color: var(--status-cancelled-text);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+/* BUTTONS */
 .containerButtonsForm {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin-top: 1rem;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 .buttonsForm {
-  padding: 10px 15px;
-  font-size: 1.1rem;
-  background-color: var(--Verdeoliva);
-  border: none;
-  border-radius: 5px;
+  flex: 1;
+  padding: 0.8rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: var(--transition);
+  border: 1px solid transparent;
 }
 
-.buttonsForm:disabled:hover {
+/* Submit — gold */
+.buttonsForm[type="submit"] {
+  background-color: var(--gold);
+  color: var(--ink-black);
+  border-color: var(--gold);
+}
+
+.buttonsForm[type="submit"]:hover:not(:disabled) {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.buttonsForm[type="submit"]:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
+/* Clear — ghost */
 .buttonsForm[type="button"] {
-  background-color: var(--Terracota);
-}
-
-.errorMsj {
-  color: var(--Blanco);
   background-color: transparent;
-  backdrop-filter: blur(10px);
-  font-size: 1.1rem;
+  color: var(--ash);
+  border-color: var(--border-mid);
 }
 
-@media (max-width: 1024px) {
-  .tattosInk {
-    bottom: 280px;
-    right: 50px;
-  }
-
-  .tattosHeart {
-    top: 50px;
-    left: 50px;
-  }
-
-  .tattosSkull {
-    bottom: 145px;
-    left: 60px;
-  }
-
-  .tattosbird {
-    top: 50px;
-    right: 30px;
-  }
+.buttonsForm[type="button"]:hover {
+  border-color: var(--red-ink-border);
+  color: var(--status-cancelled-text);
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .tattos {
     display: none;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
   .singupForm {
-    width: 90%;
-    margin: 0px auto 50px;
-    padding: 20px 25px;
-  }
-
-  .labelsForm {
-    font-size: 1.1rem;
-    gap: 0.2rem;
-    font-weight: 500;
-  }
-
-  .formInputs {
-    border: none;
-    padding: 5px 12px;
-    font-weight: 300;
-    font-size: 1rem;
+    padding: 2rem 1.25rem;
   }
 }

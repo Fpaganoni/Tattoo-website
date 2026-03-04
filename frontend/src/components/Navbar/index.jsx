@@ -4,17 +4,28 @@ import NavbarTabs from "./navbarComponents/NavbarTabs";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Logout from "../Logout/index";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
 
   return (
     <nav className={styles.navbar}>
-      <LoginRegister />
+      {/* Logo */}
+      <Link to="/home" className={styles.logoLink}>
+        <div className={styles.logoMark}>T</div>
+        <h1 className={styles.mainTitle}>
+          Tattoo <span>Studio</span>
+        </h1>
+      </Link>
 
-      {user?.login === true ? <Logout /> : null}
-      <h1 className={styles.mainTitle}>Welcome to Tattoo Studio</h1>
+      {/* Nav links */}
       <NavbarTabs />
+
+      {/* Auth buttons */}
+      <div className={styles.loginRegisterContainer}>
+        {user?.login === true ? <Logout /> : <LoginRegister />}
+      </div>
     </nav>
   );
 };

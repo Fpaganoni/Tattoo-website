@@ -1,0 +1,79 @@
+/* =====================================================
+   TATTOO STUDIO — Global Design Tokens
+   Import this file in index.css ONLY.
+   Never redeclare :root variables in CSS Modules.
+   ===================================================== */
+
+:root {
+  /* --- Color Palette --- */
+  --ink-black: #0d0d0d;
+  --carbon: #1a1a1a;
+  --carbon-light: #222222;
+  --steel: #2e2e2e;
+  --steel-light: #3a3a3a;
+  --ash: #9a9a9a;
+  --bone: #f0ece4;
+  --bone-muted: #c8c4bc;
+
+  /* Accent — Gold */
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --gold-border: rgba(201, 168, 76, 0.35);
+
+  /* Accent — Red Ink */
+  --red-ink: #9b1c1c;
+  --red-ink-light: #c0392b;
+  --red-ink-dim: rgba(155, 28, 28, 0.15);
+  --red-ink-border: rgba(155, 28, 28, 0.4);
+
+  /* Status */
+  --status-active: #2d6a27;
+  --status-active-text: #5dba5a;
+  --status-cancelled: var(--red-ink);
+  --status-cancelled-text: #e05858;
+
+  /* Surfaces */
+  --surface-glass: rgba(255, 255, 255, 0.04);
+  --surface-glass-hover: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-mid: rgba(255, 255, 255, 0.14);
+
+  /* --- Typography --- */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Font sizes */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.75rem;
+  --fs-4xl: 3.5rem;
+  --fs-hero: clamp(3rem, 7vw, 5.5rem);
+
+  /* --- Spacing --- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+
+  /* --- Effects --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-gold: 0 0 24px rgba(201, 168, 76, 0.18);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 8px 40px rgba(0, 0, 0, 0.7);
+
+  --transition: all 0.25s ease;
+  --transition-slow: all 0.4s ease;
+}

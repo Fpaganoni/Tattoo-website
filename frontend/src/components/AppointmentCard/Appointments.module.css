@@ -1,66 +1,102 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-  --Verdeoliva: #3e5c2f;
-  --Terracota: #91332d;
-  --Celestegris: #a8dadc;
-}
+/* Appointments.module.css */
 
 .cardContainer {
-  width: 300px;
-  background-color: var(--Grisclaro);
+  background: var(--surface-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(8px);
+  padding: 1.75rem 2rem;
+  width: 280px;
   display: flex;
-  color: var(--Azulpetróleo);
+  flex-direction: column;
+  gap: 1rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+}
 
-  border-radius: 5px;
+.cardContainer:hover {
+  border-color: var(--border-mid);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .infoContainer {
-  font-family: "montserrat";
-  font-weight: 600;
-  background-color: var(--Amarillomostaza);
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 30px 35px;
-  border-radius: 5px;
+  gap: 0.65rem;
 }
 
-.buttonCancelled {
-  background-color: var(--Terracota);
-  border: none;
-  width: 150px;
-  padding: 5px 9px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: box-shadow 300ms ease-in-out;
-  margin: 15px 15px 0;
-  color: var(--Blanco);
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--bone-muted);
+  font-size: var(--fs-sm);
+}
 
-  &&:hover {
-    box-shadow: 2px 3px 4px var(--Negrosuave), 3px 4px 5px var(--Negrosuave);
-  }
+.infoIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.infoText {
+  font-weight: 500;
+  color: var(--bone);
+}
+
+/* STATUS BADGE */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.statusActive {
+  background-color: rgba(45, 106, 39, 0.2);
+  border: 1px solid rgba(93, 186, 90, 0.35);
+  color: var(--status-active-text);
+}
+
+.statusCancelled {
+  background-color: var(--red-ink-dim);
+  border: 1px solid var(--red-ink-border);
+  color: var(--status-cancelled-text);
+}
+
+/* BUTTONS */
+.buttonCancelled {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--red-ink-border);
+  color: var(--status-cancelled-text);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.buttonCancelled:hover {
+  background-color: var(--red-ink-dim);
+  border-color: var(--red-ink-light);
+  transform: translateY(-1px);
 }
 
 .cancelledSpan {
-  color: var(--Terracota);
-  font-weight: 600;
-  font-size: 1rem;
-  width: max-content;
-  margin: 15px 5px 0;
-  padding: 5px 9px;
-  cursor: default;
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: var(--fs-xs);
+  color: var(--ash);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }

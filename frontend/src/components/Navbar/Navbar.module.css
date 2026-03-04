@@ -1,280 +1,245 @@
-:root {
-  font-family: "Montserrat", sans-serif;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  min-width: 100%;
-  height: 100vh;
-
-  --Blanco: #ffffff;
-  --Grisclaro: #ededed;
-  --Negrosuave: #2c2c2c;
-  --Azulpetróleo: #264653;
-  --Amarillomostaza: #e9c46a;
-
-  --intermediate-gray: #c0c0c0;
-
-  --gray-900: #121212;
-  --gray-800: #1e1e1e;
-  --gray-700: #2c2c2c;
-  --gray-600: #3a3a3a;
-  --gray-500: #4f4f4f;
-  --gray-400: #666666;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Navbar.module.css — Dark premium tattoo studio style */
 
 .navbar {
-  background-color: var(--Amarillomostaza);
+  background-color: var(--ink-black);
+  border-bottom: 1px solid var(--border-subtle);
   width: 100%;
-  align-items: center;
-  height: 95px;
+  height: 72px;
   display: flex;
-  justify-content: space-evenly;
-  padding: 15px 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+/* LOGO */
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  text-decoration: none;
+}
+
+.logoMark {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  font-style: italic;
+  flex-shrink: 0;
 }
 
 .mainTitle {
-  font-family: "montserrat", sans-serif;
-  font-size: 2rem;
-  letter-spacing: 1px;
-  text-align: center;
-  color: var(--Negrosuave);
-  font-weight: 500;
-  flex: 1;
-}
-
-.loginRegisterContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  flex: 1;
-}
-
-.loginRegisterContainer span:first-child {
-  padding-right: 20px;
-}
-
-.loginRegisterContainer span:last-child {
-  padding-left: 20px;
-}
-
-.loginRegisterSpan {
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
   font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  color: var(--Negrosuave);
-  cursor: pointer;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-
-  &&:hover {
-    transform: translateY(-5px);
-  }
+  color: var(--bone);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
-.logoutIcons {
-  width: 35px;
-  height: 35px;
-  align-self: center;
+.mainTitle span {
+  color: var(--gold);
 }
 
-.loginRegisterIcons {
-  width: 30px;
-  height: 30px;
-  align-self: center;
-}
-
-/*  social icon container */
-
-.iconContainer {
-  width: 70%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: var(--intermediate-gray);
-  padding: 15px;
-  border-radius: 30px;
-}
-
-.socialIcons {
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-
-  &&:hover {
-    transform: translateY(5px);
-  }
-}
-
-.anchor {
-  width: 35px;
-  height: 35px;
-}
-
-/*  navbar tabs */
-
+/* NAV TABS */
 .navbarTabsContainer {
-  width: 325px;
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex: 1;
 }
 
 .navbarTabs {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
+  gap: 2.5rem;
+  list-style: none;
 }
 
 .navbarTab {
-  list-style: none;
-  color: var(--Negrosuave);
-  font-size: 1.1rem;
-  font-family: "Montserrat", sans-serif;
-  cursor: pointer;
-  font-weight: 600;
-
-  &&:hover {
-    color: var(--Grisclaro);
-  }
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--bone-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
 }
 
-/** MEDIA QUERYS */
+.navbarTab::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.navbarTab:hover {
+  color: var(--gold);
+}
+
+.navbarTab:hover::after {
+  width: 100%;
+}
+
+/* AUTH BUTTONS AREA */
+.loginRegisterContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.loginRegisterSpan {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--bone-muted);
+  border: 1px solid transparent;
+}
+
+.loginRegisterSpan:hover {
+  color: var(--gold);
+  border-color: var(--gold-border);
+  background-color: var(--gold-dim);
+}
+
+.loginPrimary {
+  background-color: var(--gold);
+  color: var(--ink-black) !important;
+  font-weight: 600;
+  border-color: var(--gold) !important;
+}
+
+.loginPrimary:hover {
+  background-color: var(--gold-light) !important;
+  border-color: var(--gold-light) !important;
+  color: var(--ink-black) !important;
+  transform: translateY(-1px);
+}
+
+.loginRegisterIcons {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0.85);
+}
+
+/* LOGOUT BUTTON */
+.logoutContainer {
+  display: flex;
+  align-items: center;
+}
+
+/* SOCIAL ICONS (used in About page) */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: var(--carbon);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-pill);
+}
+
+.socialIcons {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: var(--transition);
+  filter: brightness(0.7);
+}
+
+.socialIcons:hover {
+  filter: brightness(1) sepia(1) saturate(3) hue-rotate(5deg);
+  transform: translateY(-3px);
+}
+
+.anchor {
+  display: flex;
+  align-items: center;
+}
+
+/* ── RESPONSIVE ── */
 
 @media (max-width: 1024px) {
-  .navbar {
-    height: 90px;
-  }
-
   .mainTitle {
-    font-size: 1.4rem;
-    letter-spacing: 0px;
-    flex: 1;
+    font-size: var(--fs-md);
   }
-
-  .loginRegisterContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    flex: 1;
-  }
-
-  .loginRegisterContainer span:first-child {
-    padding-right: 10px;
-  }
-
-  .loginRegisterContainer span:last-child {
-    padding-left: 10px;
-  }
-
-  .loginRegisterSpan {
-    font-size: 0.8rem;
-    gap: 5px;
-  }
-
-  .logoutIcons {
-    width: 30px;
-    height: 30px;
-  }
-
-  .loginRegisterIcons {
-    width: 30px;
-    height: 30px;
-  }
-
-  /*  navbar tabs */
-
-  .navbarTabsContainer {
-    width: 250px;
-    flex: 1;
-  }
-
   .navbarTabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .navbarTab {
-    font-size: 1rem;
-    font-weight: 600;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    height: 200px;
-    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    gap: 0.5rem;
   }
 
-  .mainTitle {
-    font-size: 1.4rem;
-    flex: 0;
+  .logoLink {
+    flex: none;
   }
-
-  .loginRegisterContainer {
-    width: 200px;
-    flex: 1;
-    gap: 45px;
-  }
-
-  .loginRegisterContainer span:first-child {
-    padding-right: 7px;
-  }
-
-  .loginRegisterContainer span:last-child {
-    padding-left: 7px;
-  }
-
-  .loginRegisterSpan {
-    font-size: 0.8rem;
-    gap: 3px;
-  }
-
-  .logoutIcons {
-    width: 25px;
-    height: 25px;
-  }
-
-  .loginRegisterIcons {
-    width: 25px;
-    height: 25px;
-  }
-
-  /*  navbar tabs */
 
   .navbarTabsContainer {
-    width: 300px;
-    flex: 1;
+    order: 3;
+    flex: 1 1 100%;
+    padding: 0.4rem 0 0.5rem;
+    border-top: 1px solid var(--border-subtle);
+    justify-content: center;
   }
 
   .navbarTabs {
-    gap: 1rem;
+    gap: 1.75rem;
   }
 
-  .navbarTab {
-    font-size: 0.9rem;
+  .loginRegisterContainer {
+    flex: none;
   }
 }
 
 @media (max-width: 480px) {
-  .iconContainer {
-    width: 90%;
+  .navbarTabs {
+    gap: 1.25rem;
+  }
+  .loginRegisterSpan {
+    padding: 0.4rem 0.65rem;
+    font-size: var(--fs-xs);
+  }
+  .mainTitle {
+    font-size: 1rem;
+  }
+  .logoMark {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
   }
 }
