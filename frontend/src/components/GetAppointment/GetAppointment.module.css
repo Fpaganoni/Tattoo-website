@@ -166,7 +166,7 @@ input {
   padding: 0.65rem 1rem;
   font-size: var(--fs-base);
   color: var(--bone);
-  width: 100%;
+  width: 10%;
   transition: var(--transition);
 }
 
@@ -188,7 +188,7 @@ input {
   border: none;
   cursor: pointer;
   transition: var(--transition);
-  width: 100%;
+  width: 70%;
   text-align: center;
 }
 
@@ -211,6 +211,7 @@ input {
 .zipRow {
   display: flex;
   gap: 0.5rem;
+  width: 70%;
 }
 
 .zipRow .input {
