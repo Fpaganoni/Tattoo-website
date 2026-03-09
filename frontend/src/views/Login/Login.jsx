@@ -51,12 +51,14 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const togglePassword = () => setShowPassword((prev) => !prev);
 
   const { setUser } = useContext(AuthContext);
 
   const onSubmit = (data) => {
+    setIsLoading(true);
     axios
       .post(`${apiUrl}/users/login`, data)
       .then((res) => {
@@ -76,6 +78,9 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
       })
       .catch((error) => {
         toast.error(error.response?.data?.message || "Login failed");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -141,9 +146,9 @@ const Login = ({ handleOnClose, onLoginSucces }) => {
           <button
             type="submit"
             className={styles.buttonLogin}
-            disabled={!isValid}
+            disabled={!isValid || isLoading}
           >
-            Login
+            {isLoading ? "Logging in…" : "Login"}
           </button>
         </div>
       </form>

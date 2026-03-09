@@ -51,10 +51,12 @@ const Register = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const passwordValue = watch("password");
 
   const sendData = (data) => {
+    setIsLoading(true);
     axios
       .post(`${apiUrl}/users/register`, data)
       .then(() => {
@@ -65,7 +67,9 @@ const Register = () => {
       .catch((error) => {
         const backMsj = error.response?.data?.error || "Unknown error";
         toast.error(backMsj);
-        throw new Error(backMsj);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -262,15 +266,16 @@ const Register = () => {
             type="button"
             className={styles.buttonsForm}
             onClick={() => reset()}
+            disabled={isLoading}
           >
             Clear
           </button>
           <button
             className={styles.buttonsForm}
             type="submit"
-            disabled={!isValid}
+            disabled={!isValid || isLoading}
           >
-            Create Account
+            {isLoading ? "Creating account…" : "Create Account"}
           </button>
         </div>
       </form>
